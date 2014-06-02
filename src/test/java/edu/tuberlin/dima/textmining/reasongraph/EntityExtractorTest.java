@@ -15,32 +15,33 @@ import edu.tuberlin.dima.textmining.parser.ClearNLPParser;
  */
 public class EntityExtractorTest {
 
-	private static EntityExtractor extractor;
-	private static ClearNLPParser parserClear;
+    private static EntityExtractor extractor;
+    private static ClearNLPParser parserClear;
 
-	@BeforeClass
-	public static void initExtractor() throws IOException{
-		extractor = new EntityExtractor();
-		parserClear = new ClearNLPParser();
-	}
-	
-	@Test
-	public void parsingExample() throws Exception {
+    @BeforeClass
+    public static void initExtractor() throws IOException{
+        extractor = new EntityExtractor();
+        parserClear = new ClearNLPParser();
+    }
+    
+    @Test
+    public void parsingExample() throws Exception {
 
-		String sentence = "The tree was green and the house was tall.";
-		sentence = "When the sun is obscured by clouds.";
-		sentence = "The politician lost the election.";
-		
+        String sentence = "The tree was green and the house was tall.";
+        sentence = "When the sun is obscured by clouds.";
+        sentence = "The politician lost the election.";
+        sentence = "She wrapped herself in a towel.";
+        
 
-		DependencyParse clearParse = parserClear.parse(sentence);
+        DependencyParse clearParse = parserClear.parse(sentence);
 
-		// System.out.println("\n" +
-		// "\n" +
-		// "\nCLEARNLP parse (json): " + clearParse.toJson());
-		
-		String ngramLine = extractor.convertParseToSynNgram(clearParse);
+        // System.out.println("\n" +
+        // "\n" +
+        // "\nCLEARNLP parse (json): " + clearParse.toJson());
+        
+        String ngramLine = extractor.convertParseToSynNgram(clearParse);
 
-		extractor.sentenceToSynNgrams(ngramLine);
-	}
+        extractor.sentenceToSynNgrams(ngramLine);
+    }
 
 }

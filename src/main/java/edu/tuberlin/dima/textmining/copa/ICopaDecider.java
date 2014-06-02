@@ -7,13 +7,13 @@ package edu.tuberlin.dima.textmining.copa;
  *
  */
 public interface ICopaDecider {
-	
-	/**
-	 * Decide for one alternative that fulfill the premise of a given COPA question. 
-	 * 
-	 * @param copaQuest COPA question to decide
-	 * @return numer choosen alternative or 0 if no decision could be made
-	 */
-	public int decideCopaQuestion(CopaParseQuestion copaQuest);
+    
+    /**
+     * Decide for one alternative that fulfill the premise of a given COPA question. 
+     * 
+     * @param copaQuest COPA question to decide
+     * @return numer choosen alternative or 0 if no decision could be made
+     */
+    public int decideCopaQuestion(CopaParseQuestion copaQuest);
 
 }
