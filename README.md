@@ -1,3 +1,3 @@
 reasongraph
 ===========
-Solving the COPA question with the welt modell graph.
+Solving the COPA questions with the welt modell graph.
